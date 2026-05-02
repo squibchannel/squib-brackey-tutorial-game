@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://rawlcs2ggnv5"]
+
+[ext_resource type="Script" uid="uid://b0rfhbo2gsru4" path="res://scripts/game_manager.gd" id="1_glms7"]
+
+[node name="GameManager" type="Node2D" unique_id=435758547]
+top_level = true
+script = ExtResource("1_glms7")

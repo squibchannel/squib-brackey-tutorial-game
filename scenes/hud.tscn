@@ -1,0 +1,164 @@
+[gd_scene format=3 uid="uid://bamiwp2t40vsd"]
+
+[ext_resource type="FontFile" uid="uid://83h3yufdhyk7" path="res://assets/fonts/PixelOperator8.ttf" id="1_ahhtf"]
+[ext_resource type="Script" uid="uid://606qqk1040q6" path="res://scripts/hud.gd" id="1_oo0fn"]
+[ext_resource type="Texture2D" uid="uid://bp8es7abn5dtb" path="res://assets/sprites/pixel_heart.png" id="3_6fi6k"]
+[ext_resource type="Texture2D" uid="uid://q1dm8beyuseg" path="res://assets/sprites/single_coin_icon.png" id="4_uo2fv"]
+[ext_resource type="Texture2D" uid="uid://d2if732ekm30s" path="res://assets/sprites/display_bottle.png" id="5_uo2fv"]
+[ext_resource type="Texture2D" uid="uid://bift3jnm55hoq" path="res://assets/sprites/pixel_clock.png" id="6_047uy"]
+
+[sub_resource type="Theme" id="Theme_oo0fn"]
+default_font = ExtResource("1_ahhtf")
+
+[sub_resource type="Theme" id="Theme_047uy"]
+
+[sub_resource type="Theme" id="Theme_5pdws"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_toqtt"]
+font = ExtResource("1_ahhtf")
+font_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_6fi6k"]
+
+[sub_resource type="Theme" id="Theme_0i1j5"]
+default_font_size = 0
+
+[sub_resource type="Theme" id="Theme_hd3ao"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_047uy"]
+font_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_oo0fn"]
+font_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_mphia"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_047uy"]
+bg_color = Color(0, 0, 0, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 2
+shadow_offset = Vector2(1, 1)
+
+[node name="Hud" type="CanvasLayer" unique_id=879350005]
+script = ExtResource("1_oo0fn")
+
+[node name="Control" type="Control" parent="." unique_id=565468471]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -25.0
+offset_right = 1100.0
+offset_bottom = 15.0
+scale = Vector2(2, 2)
+theme = SubResource("Theme_oo0fn")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=876912203]
+layout_mode = 1
+offset_right = 231.0
+offset_bottom = 64.0
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer" unique_id=844019389]
+layout_mode = 2
+theme = SubResource("Theme_047uy")
+theme_override_constants/separation = 10
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/HBoxContainer" unique_id=1765071801]
+layout_mode = 2
+theme = SubResource("Theme_5pdws")
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer" unique_id=1924791037]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="LiveDisplay" type="HBoxContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer/HBoxContainer2" unique_id=279083584]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/HBoxContainer/MarginContainer/HBoxContainer2/LiveDisplay" unique_id=1100829799]
+layout_mode = 2
+texture = ExtResource("3_6fi6k")
+
+[node name="lives" type="Label" parent="Control/MarginContainer/HBoxContainer/MarginContainer/HBoxContainer2/LiveDisplay" unique_id=816440030]
+unique_name_in_owner = true
+layout_mode = 2
+text = "3"
+label_settings = SubResource("LabelSettings_toqtt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CoinsDisplay" type="HBoxContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer/HBoxContainer2" unique_id=1351539115]
+layout_mode = 2
+theme = SubResource("Theme_6fi6k")
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/HBoxContainer/MarginContainer/HBoxContainer2/CoinsDisplay" unique_id=510090349]
+layout_mode = 2
+texture = ExtResource("4_uo2fv")
+
+[node name="coins" type="Label" parent="Control/MarginContainer/HBoxContainer/MarginContainer/HBoxContainer2/CoinsDisplay" unique_id=717860769]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_toqtt")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BottlesDisplay" type="HBoxContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer/HBoxContainer2" unique_id=1386857472]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/HBoxContainer/MarginContainer/HBoxContainer2/BottlesDisplay" unique_id=1111352314]
+layout_mode = 2
+theme = SubResource("Theme_0i1j5")
+texture = ExtResource("5_uo2fv")
+
+[node name="bottles" type="Label" parent="Control/MarginContainer/HBoxContainer/MarginContainer/HBoxContainer2/BottlesDisplay" unique_id=39790712]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_hd3ao")
+text = "0"
+label_settings = SubResource("LabelSettings_047uy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/HBoxContainer/MarginContainer/HBoxContainer2" unique_id=545175128]
+layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/HBoxContainer/MarginContainer/HBoxContainer2/HBoxContainer" unique_id=1300974613]
+layout_mode = 2
+texture = ExtResource("6_047uy")
+
+[node name="timer_label" type="Label" parent="Control/MarginContainer/HBoxContainer/MarginContainer/HBoxContainer2/HBoxContainer" unique_id=1047853427]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0:00"
+label_settings = SubResource("LabelSettings_oo0fn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatsPanel" type="PanelContainer" parent="Control/MarginContainer" unique_id=909933926]
+unique_name_in_owner = true
+z_index = -1
+texture_filter = 1
+layout_mode = 2
+theme = SubResource("Theme_mphia")
+theme_override_styles/panel = SubResource("StyleBoxFlat_047uy")

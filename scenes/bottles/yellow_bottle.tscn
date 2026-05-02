@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dqkebaj5jbfjv"]
+
+[ext_resource type="Script" uid="uid://y7ipv7jd85tm" path="res://scripts/bottle.gd" id="1_kj0uo"]
+[ext_resource type="SpriteFrames" uid="uid://dte3eshec5qa8" path="res://scenes/bottles/yellow_bottle.tres" id="2_at6nq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbk1a"]
+size = Vector2(8, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kj0uo"]
+size = Vector2(6, 13)
+
+[node name="yellow_bottle" type="Node2D" unique_id=741821043]
+script = ExtResource("1_kj0uo")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=846156068]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=718873915]
+shape = SubResource("RectangleShape2D_cbk1a")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=302486084]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=636773040]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_kj0uo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1765513052]
+sprite_frames = ExtResource("2_at6nq")
+animation = &"breaking"
+autoplay = "default"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

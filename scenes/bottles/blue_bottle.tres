@@ -1,0 +1,133 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://b28x5axd3t1jn"]
+
+[ext_resource type="Texture2D" uid="uid://d1h1hf8p5onq1" path="res://assets/sprites/blue_bottle_broken.png" id="1_b7sdl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0lxi"]
+atlas = ExtResource("1_b7sdl")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0etv"]
+atlas = ExtResource("1_b7sdl")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhqbu"]
+atlas = ExtResource("1_b7sdl")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h621"]
+atlas = ExtResource("1_b7sdl")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5ddu"]
+atlas = ExtResource("1_b7sdl")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tfix"]
+atlas = ExtResource("1_b7sdl")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ym8mp"]
+atlas = ExtResource("1_b7sdl")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_willg"]
+atlas = ExtResource("1_b7sdl")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hy5uk"]
+atlas = ExtResource("1_b7sdl")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6g2v"]
+atlas = ExtResource("1_b7sdl")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q31bv"]
+atlas = ExtResource("1_b7sdl")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xhjb"]
+atlas = ExtResource("1_b7sdl")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqjx5"]
+atlas = ExtResource("1_b7sdl")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_355dg"]
+atlas = ExtResource("1_b7sdl")
+region = Rect2(208, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlt5m"]
+atlas = ExtResource("1_b7sdl")
+region = Rect2(208, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7sdl"]
+atlas = ExtResource("1_b7sdl")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0lxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0etv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhqbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3h621")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5ddu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tfix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ym8mp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_willg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hy5uk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6g2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q31bv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xhjb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqjx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_355dg")
+}],
+"loop": false,
+"name": &"breaking",
+"speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlt5m")
+}],
+"loop": false,
+"name": &"broken",
+"speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7sdl")
+}],
+"loop": false,
+"name": &"default",
+"speed": 13.0
+}]

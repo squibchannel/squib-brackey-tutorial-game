@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://byv68sq7g0q4c"]
+
+[node name="killzone" type="Area2D" unique_id=810725440]
+collision_mask = 2
+
+[node name="Timer" type="Timer" parent="." unique_id=1830480583]
+wait_time = 0.6
+one_shot = true

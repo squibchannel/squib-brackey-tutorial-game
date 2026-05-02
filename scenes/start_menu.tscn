@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://dw27usquefhw1"]
+
+[ext_resource type="FontFile" uid="uid://bxvkaqxrkx6fu" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_h61rw"]
+[ext_resource type="Script" uid="uid://c1p6dqosjjbuq" path="res://scripts/start_menu.gd" id="1_ouf4f"]
+[ext_resource type="Texture2D" uid="uid://bik5h23ulrioo" path="res://assets/sprites/dark_background.jpg" id="2_thu50"]
+[ext_resource type="Script" uid="uid://dn0qmxyyv5ctu" path="res://scripts/panel_container.gd" id="3_m7x51"]
+
+[sub_resource type="Theme" id="Theme_fcv5n"]
+default_font = ExtResource("1_h61rw")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thu50"]
+bg_color = Color(0, 0.37068537, 0.633434, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.025999654, 0.96743494, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="LabelSettings" id="LabelSettings_thu50"]
+font_size = 12
+
+[node name="Control" type="Control" unique_id=1679210365]
+custom_minimum_size = Vector2(1152, 648)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_fcv5n")
+script = ExtResource("1_ouf4f")
+
+[node name="Background" type="TextureRect" parent="." unique_id=541004546]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_thu50")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=387168968]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1691750616]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_thu50")
+script = ExtResource("3_m7x51")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=1663204138]
+custom_minimum_size = Vector2(325, 175)
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=103063690]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=39910975]
+custom_minimum_size = Vector2(0, 124)
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1208376490]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Brackey's Tutorial Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SubLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=665085042]
+layout_mode = 2
+size_flags_vertical = 1
+text = "by Squib
+"
+label_settings = SubResource("LabelSettings_thu50")
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1807340868]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 56)
+layout_mode = 2
+text = "Start"
+
+[node name="ExitButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=509918948]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 56)
+layout_mode = 2
+text = "Exit"

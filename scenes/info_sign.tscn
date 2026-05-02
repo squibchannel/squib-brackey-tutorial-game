@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://wx3g6tgjd3sq"]
+
+[ext_resource type="Texture2D" uid="uid://d0ug2lkqxucjm" path="res://assets/sprites/world_tileset.png" id="1_hhqo5"]
+
+[sub_resource type="GDScript" id="GDScript_l6bhq"]
+script/source = "extends Node2D
+
+@onready var first_sign_text: Node2D = $FirstSignText
+
+var can_read := false
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"player\"):
+		can_read = true
+		
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.is_in_group(\"player\"):
+		can_read = false
+		first_sign_text.visible = false
+
+func _process(delta: float) -> void:
+	if can_read and Input.is_action_just_pressed(\"action\"):
+		first_sign_text.visible = true
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftkjs"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hhqo5"]
+size = Vector2(12, 13)
+
+[node name="InfoSign" type="Node2D" unique_id=2028895806]
+script = SubResource("GDScript_l6bhq")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1674195221]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1852151332]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_ftkjs")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1787429109]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=985411096]
+position = Vector2(8, 8.5)
+shape = SubResource("RectangleShape2D_hhqo5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2138698717]
+position = Vector2(8, 8)
+texture = ExtResource("1_hhqo5")
+region_enabled = true
+region_rect = Rect2(129, 50, 14, 14)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

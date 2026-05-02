@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://b74m8ta0ftcrp"]
+
+[ext_resource type="Script" uid="uid://dg8yg35ljnxv7" path="res://scripts/game_over.gd" id="1_64dwf"]
+[ext_resource type="FontFile" uid="uid://bxvkaqxrkx6fu" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_wqhvx"]
+
+[sub_resource type="Theme" id="Theme_tbwuq"]
+default_font = ExtResource("1_wqhvx")
+default_font_size = 32
+
+[node name="GameOverScene" type="Control" unique_id=1885548548]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_tbwuq")
+script = ExtResource("1_64dwf")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1060984321]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1724765759]
+layout_mode = 2
+
+[node name="GameOverLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1141291810]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=79582264]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Restart"
+
+[node name="MainMenuButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1641335954]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Main Menu"

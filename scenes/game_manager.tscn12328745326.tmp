@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://rawlcs2ggnv5"]
+
+[ext_resource type="Script" uid="uid://b0rfhbo2gsru4" path="res://scripts/game_manager.gd" id="1_glms7"]
+[ext_resource type="FontFile" uid="uid://bxvkaqxrkx6fu" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_udu3i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_glms7"]
+font = ExtResource("2_udu3i")
+font_size = 8
+
+[node name="GameManager" type="Node2D" unique_id=435758547]
+script = ExtResource("1_glms7")
+
+[node name="Label" type="Label" parent="." unique_id=251573561]
+offset_left = 24.0
+offset_top = -22.0
+offset_right = 72.0
+offset_bottom = -14.0
+text = "Coins: "
+label_settings = SubResource("LabelSettings_glms7")
+metadata/_edit_use_anchors_ = true

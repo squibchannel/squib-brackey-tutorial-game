@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://h7amlpbubb45"]
+
+[ext_resource type="FontFile" uid="uid://83h3yufdhyk7" path="res://assets/fonts/PixelOperator8.ttf" id="1_7jfjr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jfjr"]
+bg_color = Color(0.93333334, 0.93333334, 0.7921569, 0.49803922)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 0.5294118)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="Theme" id="Theme_7jfjr"]
+
+[sub_resource type="Theme" id="Theme_488ne"]
+default_font_size = 8
+
+[node name="FirstSignText" type="Node2D" unique_id=2023964317]
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=166254695]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7jfjr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=1763188006]
+layout_mode = 2
+theme = SubResource("Theme_7jfjr")
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/HBoxContainer" unique_id=1339131453]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = SubResource("Theme_488ne")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_7jfjr")
+text = "Press F to read this sign... oh wait nvm
+
+Good Luck!"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
